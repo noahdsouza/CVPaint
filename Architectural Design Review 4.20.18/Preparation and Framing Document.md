@@ -10,13 +10,16 @@ How should we prevent the camera from losing focus our cursor if it detects the 
 
 Would changing the color values or creating an array of colors be a good approach?
 
-What is the best way to store pixel data?
-
 Was it a good idea to pivot this late in the project to something new, and do you think we can accomplish this project?
 
 How might we go about implementing a second cursor?
+
+### Technical Discussion
+What is the best way to store pixel data?
+
+Lists, array, deque -> list? 
     
 ### Agenda for technical review session:
-We will start by creating a function that will utilize OpenCV through the laptop camera in python. From there, since we already have some code made for drawing the stroke already, we will likely start implementing other features into the program to have it use more colors and save pictures that have been made.
+We will start by creating a function that will utilize OpenCV through the laptop camera in python. From there, since we already have some code made for drawing the stroke already, we will likely start implementing other features into the program to have it use more colors and save pictures that have been made. We also plan to show a prototype of the code we have so far to show the current bugs and have user input
 
 
