@@ -91,7 +91,7 @@ while True:
     cv2.rectangle(frame, (0,0), (75,49), (0,0,0), 2)           # white/eraser
     cv2.rectangle(frame, (75,0), (150,50), (0,0,0), -1)        # black
     cv2.rectangle(frame, (150,0), (225,50), (255,0,242), -1)   # violet/purple
-    cv2.rectangle(frame, (225,0), (300,50), (255,0,), -1)      # blue
+    cv2.rectangle(frame, (225,0), (300,50), (255,0,0), -1)     # blue
     cv2.rectangle(frame, (300,0), (375,50), (0,255,63), -1)    # green
     cv2.rectangle(frame, (375,0), (450,50), (0,250,255), -1)   # yellow
     cv2.rectangle(frame, (450,0), (525,50), (0,174,255), -1)   # orange
