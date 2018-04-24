@@ -6,7 +6,10 @@ Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive 
 *add side by side gif of CVPaint here
 
 ## Project Evolution
-explain our pivot
-
+talk about the original idea - CV Puppets
+-kinect
+-point cloud library
+-pinhole camera model
 *add kinect pictures here
 
+-talk about pivot
