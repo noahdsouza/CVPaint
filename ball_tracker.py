@@ -21,7 +21,8 @@ args = vars(ap.parse_args())
 # list of tracked points
 greenLower = (29, 86, 6)
 greenUpper = (64, 255, 255)
-pts = deque(maxlen=args["buffer"])
+#pts = deque(maxlen=args["buffer"])
+pts = []
 
 # if a video path was not supplied, grab the reference
 # to the webcam
@@ -80,10 +81,23 @@ while True:
             cv2.circle(frame, center, 5, (0, 255, 0), -1)
 
     # update the points queue
-    pts.appendleft(center)
+    #pts.appendleft(center)
+    pts.insert(0,center)
+
+    # but a bigass white rectangle in the background so we don't have to look at y'all's ugly ass faces
+    cv2.rectangle(frame, (0,0), (600,450), (255,255,255), -1)
+
+    # initialize the colorbar (REMEMBER BGR NOT RGB)
+    cv2.rectangle(frame, (0,0), (75,49), (0,0,0), 2)           # white/eraser
+    cv2.rectangle(frame, (75,0), (150,50), (0,0,0), -1)        # black
+    cv2.rectangle(frame, (150,0), (225,50), (255,0,242), -1)   # violet/purple
+    cv2.rectangle(frame, (225,0), (300,50), (255,0,), -1)      # blue
+    cv2.rectangle(frame, (300,0), (375,50), (0,255,63), -1)    # green
+    cv2.rectangle(frame, (375,0), (450,50), (0,250,255), -1)   # yellow
+    cv2.rectangle(frame, (450,0), (525,50), (0,174,255), -1)   # orange
+    cv2.rectangle(frame, (525,0), (600,50), (0,0,255), -1)     # red
 
     # loop over the set of tracked points
-    cv2.rectangle(frame, (0,0), (600,450), (255,255,255), -1)
     for i in range(1, len(pts)):
         # if either of the tracked points are None, ignore
         # them
