@@ -143,7 +143,8 @@ while True:
     # if the 'q' key is pressed, stop the loop
     if key == ord("q"):
         break
-cv2.imwrite('jeff.png', cv2.flip(frame,1))
+
+cv2.imwrite('code/images/oof.png', cv2.flip(frame,1))
 # cleanup the camera and close any open windows
 
 camera.release()
