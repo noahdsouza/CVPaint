@@ -7,9 +7,13 @@ Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive 
 
 ## Project Evolution
 talk about the original idea - CV Puppets
+
 -kinect
+
 -point cloud library
+
 -pinhole camera model
+
 *add kinect pictures here
 
 -talk about pivot
