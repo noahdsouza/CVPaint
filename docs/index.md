@@ -17,3 +17,4 @@ talk about the original idea - CV Puppets
 *add kinect pictures here
 
 -talk about pivot
+
