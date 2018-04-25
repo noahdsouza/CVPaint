@@ -22,7 +22,7 @@ $ git clone https://github.com/noahdsouza/CVPaint.git
 ```
 You should now have a local repository named `CVPaint`.
 
-# Running `CVPaint`
+# Running CVPaint
 `CVPaint` has several files and functions, but to run the main one, follow these steps!
 1. Open a terminal
 1. Enter the `CVPaint` code directory by entering `cd CVPaint/code/` into the command line
