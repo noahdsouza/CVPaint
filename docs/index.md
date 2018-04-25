@@ -14,9 +14,9 @@ talk about the original idea - CV Puppets
 
 -pinhole camera model
 
-![alt text](https://github.com/noahdsouza/CVPaint/blob/master/docs/images/cvpaintgif.gif "Logo Title Text 1")
+![](https://github.com/noahdsouza/CVPaint/blob/master/docs/images/cvpaintgif.gif "Logo Title Text 1")
 
-![alt text](https://github.com/noahdsouza/CVPaint/blob/master/docs/images/cvpaintnorect.gif "Uhh khakis")
+![](https://github.com/noahdsouza/CVPaint/blob/master/docs/images/cvpaintnorect.gif "Uhh khakis")
 
 
 -talk about pivot
