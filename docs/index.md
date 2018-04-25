@@ -25,7 +25,7 @@ You should now have a local repository named `CVPaint`.
 # Running `CVPaint`
 `CVPaint` has several files and functions, but to run the main one, follow these steps!
 1. Open a terminal
-1. Enter the `CVPaint` code directory with `cd CVPaint/code/` into the command line
+1. Enter the `CVPaint` code directory by entering `cd CVPaint/code/` into the command line
 1. Run `CVPaint` by entering `python ball_tracker.py` into the command line
 1. Go absolutely nuts with our project!
   1. To pause the paintbrush, hit the space bar
