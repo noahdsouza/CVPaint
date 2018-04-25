@@ -12,9 +12,7 @@ Turns out, that's really difficult, which normally wouldn't be a problem. Unfort
 
 Let's talk some more about CVPuppets.
 
-* kinect
-* point cloud library
-* pinhole camera model
-* oof??
-* talk about pivot
+* First we acquired a Microsoft Kinect from Chase's house and used it to collect depth information
+* We used the Point Cloud Library interpret the data (using RANSAC and the pinhole camera model) mathematically into information for mapping movements
+* Then we realized that actually mapping movements was far out of the scope of our project, making us decide to do an ankle-breaking pivot to CVPaint
 
