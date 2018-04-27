@@ -1,5 +1,7 @@
 Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive computer vision program where you can draw a picture using your hand as a cursor. The program has the capabilities of changing the color of your cursor and have and eraser to delete and misguided/unintended strokes. You will have the function to save your creation afterwards!
 
+ <a href="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/evolution.md">Project Evolution</a> 
+
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif)
 
 # Getting Started
@@ -31,7 +33,6 @@ You should now have a local repository named `CVPaint`.
   1. To quit and save your art into the `images` subfolder
 
 # Project Evolution
-[Project Evolution](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/evolution.md)
 `CVPaint` wasn't always a painting program!
 
 Way back when, `CVPaint` was a Software Design project called `CVPuppets` which was supposed to take collect depth information from a Microsoft Kinect and mimic human movements with a 3D model.
