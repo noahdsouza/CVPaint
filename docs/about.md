@@ -7,10 +7,13 @@ The purpose of the final project is to be a culmination of our learning, and to 
 # Meet the Team
 
 ### Noah D'Souza
-![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif)  |  Some Indian kid
+| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif) | NOah |
+|---------------------------------------------------------------------------------------------|------|
 
 ### Chase Joyner
-![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif)  |  My nama Chuck
+| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif) | chuck |
+|---------------------------------------------------------------------------------------------|------|
 
 ### Rachel Won
-![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif)  |  Rachel?????
+| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif) | Raechael |
+|---------------------------------------------------------------------------------------------|------|
