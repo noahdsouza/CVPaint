@@ -14,4 +14,7 @@ Make sure you have OpenCV installed
 Run the program.
 
 ### License
- This repo is free to use. Go nuts. Edits are welcome if they improve the program.
+This repo is free to use. Go nuts. Edits are welcome if they improve the program.
+ 
+### Dependencies
+
