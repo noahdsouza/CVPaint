@@ -10,3 +10,4 @@ Let's talk some more about `CVPuppets`.
 * First we acquired a Microsoft Kinect from Chase's house and used it to collect depth information
 * We used the Point Cloud Library interpret the data (using RANSAC and the pinhole camera model) mathematically into information for mapping movements
 * Then we realized that actually mapping movements was far out of the scope of our project, making us decide to do an ankle-breaking pivot to `CVPaint`
+![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Beforepivot.gif)
