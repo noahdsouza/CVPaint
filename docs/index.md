@@ -1,4 +1,3 @@
-# Big Idea
 Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive computer vision program where you can draw a picture using your hand as a cursor. The program has the capabilities of changing the color of your cursor and have and eraser to delete and misguided/unintended strokes. You will have the function to save your creation afterwards!
 
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif)
@@ -26,7 +25,7 @@ You should now have a local repository named `CVPaint`.
 `CVPaint` has several files and functions, but to run the main one, follow these steps!
 1. Open a terminal
 1. Enter the `CVPaint` code directory by entering `cd CVPaint/code/` into the command line
-1. Run `CVPaint` by entering `python ball_tracker.py` into the command line
+1. Run `CVPaint` by entering `python CVPaint.py` into the command line
 1. Go absolutely nuts with our project!
   1. To pause the paintbrush, hit the space bar
   1. To quit and save your art into the `images` subfolder
