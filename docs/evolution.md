@@ -12,3 +12,6 @@ Let's talk some more about `CVPuppets`.
 * Then we realized that actually mapping movements was far out of the scope of our project, making us decide to do an ankle-breaking pivot to `CVPaint`
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Beforepivot.gif)
 ("Don't worry CVPuppets is not dead (yet)! I have been spending countless hours burning my retinas trying to make this a reality. This will happen!!  -Chase)
+
+The code works like so:
+Opening the Kinects camera and utilizes it main and infrared camera. The camera can be used for OpenCV to collect the data using the depth image.
