@@ -2,7 +2,7 @@ Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive 
 
 [create an anchor](#anchors-in-markdown)
 
- <a href="https://github.com/noahdsouza/CVPaint/blob/master/docs/evolution.md">Project Evolution YEET</a> 
+[Project Evolution YEET](evolution)
 
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif)
 
