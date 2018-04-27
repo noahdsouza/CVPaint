@@ -31,6 +31,7 @@ You should now have a local repository named `CVPaint`.
   1. To quit and save your art into the `images` subfolder
 
 # Project Evolution
+[Project Evolution](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/evolution.md)
 `CVPaint` wasn't always a painting program!
 
 Way back when, `CVPaint` was a Software Design project called `CVPuppets` which was supposed to take collect depth information from a Microsoft Kinect and mimic human movements with a 3D model.
