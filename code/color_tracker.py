@@ -60,6 +60,8 @@ def pickColor(point):
         #red
         return (0,0,255)
 # keep looping
+
+linecolor = (0,0,0)
 while True:
     # grab the current frame
     (grabbed, frame) = camera.read()
@@ -103,8 +105,8 @@ while True:
             # draw the circle and centroid on the frame,
             # then update the list of tracked points
             cv2.circle(frame, (int(x), int(y)), int(radius),
-                 (0, 255, 0), 2)
-            cv2.circle(frame, center, 5, (0, 255, 0), -1)
+                 linecolor, 2)
+            cv2.circle(frame, center, 5, linecolor, -1)
 
     # update the points queue
     #pts.appendleft(center)
@@ -121,19 +123,24 @@ while True:
     cv2.rectangle(frame, (375,0), (450,50), (0,250,255), -1)   # yellow
     cv2.rectangle(frame, (450,0), (525,50), (0,174,255), -1)   # orange
     cv2.rectangle(frame, (525,0), (600,50), (0,0,255), -1)     # red
-    linecolor = (0,0,0)
+
+    if pts[0] is not None:
+        if 0 < pts[0][1] <= 45:
+            linecolor = pickColor(pts[0])
+            print("change?")
+            print(linecolor)
+
     for i in range(1, len(pts)):
         # if either of the tracked points are None, ignore
         # them
         if pts[i - 1] is None or pts[i] is None:
             continue
-
-        if 0 < pts[i][0] <= 600 and 0 < pts[i][1] <= 50:
-            linecolor = pickColor(pts[i])
         # otherwise, compute the thickness of the line and
         # draw the connecting lines
         thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
-        cv2.line(frame, pts[i - 1], pts[i], linecolor, thickness)
+        cv2.line(frame, pts[i - 1], pts[i], linecolor, thickness*2)
+        print("current")
+        print(linecolor)
 
     #flip_frame = cv2.flip(frame,1)
     # show the frame to our screen
@@ -144,7 +151,10 @@ while True:
     if key == ord("q"):
         break
 
-cv2.imwrite('code/images/oof.png', cv2.flip(frame,1))
+#user can input the name of the file when saving
+name = input("What would you like to name your masterpiece? ")
+filename = 'images/' + name + '.png'
+cv2.imwrite(filename, cv2.flip(frame,1))
 # cleanup the camera and close any open windows
 
 camera.release()
