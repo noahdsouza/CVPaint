@@ -1,3 +1,3 @@
-# Uhhh does this shit work
+# Uhhh does this work
 
 please?
