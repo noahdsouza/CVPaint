@@ -1,3 +1,5 @@
+[Home](index)  |  [Project Details](project_details)  |  [Project Evolution](evolution)  |
+
 # About Us
 
 CVPaint was our final project for Software Design, a class at the Olin College of Engineering.
