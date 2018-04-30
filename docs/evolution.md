@@ -1,4 +1,4 @@
-
+[Home](index)  |  [Project Details](project_details)  |  [Project Evolution](evolution)  |  [About Us](about)
 
 # Project Evolution
 `CVPaint` wasn't always a painting program!
