@@ -2,6 +2,6 @@
 
 # Project Details
 
-#### 'CVPaint' uses computer vision to track an object to draw virtual pictures.
+#### CVPaint uses computer vision to track an object to draw virtual pictures.
 
 
