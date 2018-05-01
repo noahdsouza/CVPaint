@@ -11,13 +11,13 @@ The purpose of the final project is to be a culmination of our learning, and to 
 ### Noah D'Souza
 | 
 
-<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200628.png" width="350" height="468" /> | NOah |
+<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200628.png" width="350" height="468" /> | Noah is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering. |
 |---------------------------------------------------------------------------------------------|------|
 
 ### Chase Joyner
-| <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200553.png" width="350" height="468" /> | chuck |
+| <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200553.png" width="350" height="468" /> | Chase is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering. |
 |---------------------------------------------------------------------------------------------|------|
 
 ### Rachel Won
-| <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200527.png" width="350" height="468" /> | Raechael |
+| <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200527.png" width="350" height="468" /> | Rachel is a first-year at the Olin College of Engineering, majoring in Mechanical Engineering. |
 |---------------------------------------------------------------------------------------------|------|
