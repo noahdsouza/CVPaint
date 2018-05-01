@@ -13,9 +13,9 @@ The purpose of the final project is to be a culmination of our learning, and to 
 |---------------------------------------------------------------------------------------------|------|
 
 ### Chase Joyner
-| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200553.jpg =350x468) | chuck |
+| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200553.png =350x468) | chuck |
 |---------------------------------------------------------------------------------------------|------|
 
 ### Rachel Won
-| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200527.jpg =350x468) | Raechael |
+| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200527.png =350x468) | Raechael |
 |---------------------------------------------------------------------------------------------|------|
