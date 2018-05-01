@@ -1,6 +1,6 @@
 [Home](index)  |  [Project Details](project_details)  |  [Project Evolution](evolution)  |  [About Us](about)
 
-
+# Home
 
 Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive computer vision program where you can draw a picture using your hand as a cursor. The program has the capabilities of changing the color of your cursor and have and eraser to delete and misguided/unintended strokes. You will have the function to save your creation afterwards!
 
