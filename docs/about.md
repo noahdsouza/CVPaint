@@ -9,13 +9,13 @@ The purpose of the final project is to be a culmination of our learning, and to 
 # Meet the Team
 
 ### Noah D'Souza
-| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif) | NOah |
+| ![](CVPaint/docs/images/Profiles/20180430_200628.png) | NOah |
 |---------------------------------------------------------------------------------------------|------|
 
 ### Chase Joyner
-| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif) | chuck |
+| ![](CVPaint/docs/images/Profiles/20180430_200553.jpg) | chuck |
 |---------------------------------------------------------------------------------------------|------|
 
 ### Rachel Won
-| ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/sideBySide.gif) | Raechael |
+| ![](CVPaint/docs/images/Profiles/20180430_200527.jpg) | Raechael |
 |---------------------------------------------------------------------------------------------|------|
