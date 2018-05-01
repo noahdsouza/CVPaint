@@ -60,7 +60,7 @@ def pickColor(point):
         #red
         return (0,0,255)
 # keep looping
-
+print("press q to quit")
 linecolor = (0,0,0)
 while True:
     # grab the current frame
@@ -127,8 +127,7 @@ while True:
     if pts[0] is not None:
         if 0 < pts[0][1] <= 45:
             linecolor = pickColor(pts[0])
-            print("change?")
-            print(linecolor)
+
 
     for i in range(1, len(pts)):
         # if either of the tracked points are None, ignore
@@ -137,10 +136,8 @@ while True:
             continue
         # otherwise, compute the thickness of the line and
         # draw the connecting lines
-        thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
-        cv2.line(frame, pts[i - 1], pts[i], linecolor, thickness*2)
-        print("current")
-        print(linecolor)
+        #thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
+        cv2.line(frame, pts[i - 1], pts[i], linecolor, 3)
 
     #flip_frame = cv2.flip(frame,1)
     # show the frame to our screen
@@ -152,16 +149,19 @@ while True:
         break
 
 #user can input the name of the file when saving
-name = input("What would you like to name your masterpiece? ")
-filename = 'images/' + name + '.png'
-cv2.imwrite(filename, cv2.flip(frame,1))
+save = input("Would you like to save your drawing? Enter yes or no ")
+if save == "yes" or save == "y" or save == "ye" or save == "yes ":
+    name = input("What would you like to name your masterpiece? ")
+    filename = 'images/' + name + '.png'
+    cv2.imwrite(filename, cv2.flip(frame,1))
+    camera.release()
+    cv2.destroyAllWindows()
+    img = Image.open(filename)
+    img.show()
 # cleanup the camera and close any open windows
-
-camera.release()
-cv2.destroyAllWindows()
-
-
-
+else:
+    camera.release()
+    cv2.destroyAllWindows()
 
 
 
