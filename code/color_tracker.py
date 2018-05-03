@@ -6,7 +6,8 @@ import argparse
 import imutils
 import cv2
 from PIL import Image
-
+import pygame, sys
+from pygame.locals import *
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -60,6 +61,23 @@ def pickColor(point):
         #red
         return (0,0,255)
 # keep looping
+pygame.init()
+screen = pygame.display.set_mode((600, 450))
+start = pygame.Rect(300, 300, 50, 50)
+font = pygame.font.Font(None, 32)
+pygame.display.set_caption("CVPaint")
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if pygame.mouse.get_pos() >= (300,300):
+                if pygame.mouse.get_pos() <= (350,350):
+                        running = False
+    screen.fill(pygame.Color(255, 255, 255))
+    pygame.draw.rect(screen, [255, 0, 0], start)  # draw button
+    pygame.display.update()
+pygame.quit();
+
 print("press q to quit")
 linecolor = (0,0,0)
 while True:
