@@ -91,9 +91,17 @@ def save_file(camera, frame):
         cv2.imwrite(filename, cv2.flip(frame,1))
         camera.release()
         pygame.quit()
+
+        img = cv2.imread(filename, 1)
+        b,g,r = cv2.split(img)       # get b,g,r
+        rgb_img = cv2.merge([r,g,b])
+        crop_img = rgb_img[36:450, 0:600]
+        cv2.imshow(filename, crop_img)
+        cv2.imwrite(filename, crop_img)
+        cv2.waitKey(10000)
         cv2.destroyAllWindows()
-        img = Image.open(filename)
-        img.show()
+        camera.release()
+        pygame.quit()
     # cleanup the camera and close any open windows
     else:
         pygame.quit()
