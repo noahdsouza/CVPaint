@@ -6,17 +6,28 @@ import pygame, sys
 from pygame.locals import *
 
 def home_screen(screen):
-    start = pygame.Rect(300, 300, 50, 50)
+    start = pygame.image.load('start.png')
     font = pygame.font.Font(None, 32)
+    logo = pygame.image.load("CVPAINTLOGO.png")
+    logo = pygame.transform.scale(logo, (250, 200))
+    instructions = pygame.image.load('instructions.png')
     running = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if pygame.mouse.get_pos() >= (300,300):
-                    if pygame.mouse.get_pos() <= (350,350):
+                if pygame.mouse.get_pos() >= (225, 350):
+                    if pygame.mouse.get_pos() <= (350,400):
                             running = False
+                            return True
+            if event.type == KEYDOWN:
+                if event.key == K_q:
+                    pygame.quit()
+                    cv2.destroyAllWindows()
+                    return False
         screen.fill(pygame.Color(255, 255, 255))
-        pygame.draw.rect(screen, [255, 0, 0], start)  # draw button
+        screen.blit(logo, (190,50))
+        screen.blit(start, (225,350))  # draw button
+        screen.blit(instructions, (175, 275))
         pygame.display.update()
 
 def boundaries_and_initialize():
@@ -26,7 +37,9 @@ def boundaries_and_initialize():
     greenLower = (29, 86, 6)
     greenUpper = (64, 255, 255)
     pts = []
-    return greenLower, greenUpper, pts
+    linecolor = (0,0,0)
+    counter = 0
+    return greenLower, greenUpper, pts, linecolor, counter
 
 def pickColor(point):
     x = point[0]
@@ -93,17 +106,13 @@ if __name__ == '__main__':
             pygame.init()
             pygame.display.set_caption("CVPaint")
             screen = pygame.display.set_mode([600,450])
-            home_screen(screen)
-            greenLower = (29, 86, 6)
-            greenUpper = (64, 255, 255)
-            pts = []
-            linecolor = (0,0,0)
-            flag = True
-            counter = 0
+            flag = home_screen(screen)
+            greenLower, greenUpper, pts, linecolor, counter = boundaries_and_initialize()
+
             while flag:
                 grabbed, frame = camera.read()
                 frame1 = imutils.resize(frame, width=600)
-                
+
                 hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
                 mask = cv2.inRange(hsv, greenLower, greenUpper)
                 mask = cv2.erode(mask, None, iterations=2)
