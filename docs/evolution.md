@@ -15,7 +15,9 @@ Let's talk some more about `CVPuppets`.
     * The pinhole camera model was a way to map the depth information from the Kinect to our screen, using similar triangles. 
 
 The code works like so:
+
 Opening the Kinects camera and utilizes its main and infrared camera. The camera can be used for OpenCV to collect the data using the depth image.
+
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Beforepivot.gif)
 
 
