@@ -11,8 +11,8 @@ Let's talk some more about `CVPuppets`.
 
 * First we acquired a Microsoft Kinect from Chase's house and used it to collect depth information
 * We used the Point Cloud Library interpret the data, using RANSAC and the pinhole camera model, mathematically into information for mapping movements
-* RANSAC is an algorithm which randomly chooses two points in a data set (in this case, our point cloud), draws a straight line connecting the points, and determines how many other points lie within a defined distance away, called inliers. It runs for n number of iterations, and returns a line of best fit by maximizing the number of inliers. We attempted to use RANSAC for skeleton tracking. 
-* The pinhole camera model was a way to map the depth information from the Kinect to our screen, using similar triangles. 
+    * RANSAC is an algorithm which randomly chooses two points in a data set (in this case, our point cloud), draws a straight line connecting the points, and determines how many other points lie within a defined distance away, called inliers. It runs for n number of iterations, and returns a line of best fit by maximizing the number of inliers. We attempted to use RANSAC for skeleton tracking. 
+    * The pinhole camera model was a way to map the depth information from the Kinect to our screen, using similar triangles. 
 * Then we realized that actually mapping movements was far out of the scope of our project, making us decide to do an ankle-breaking pivot to `CVPaint`
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Beforepivot.gif)
 
