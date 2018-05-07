@@ -9,5 +9,7 @@ A big part of the code is keeping track of the points the cursor has traversed o
 
 ## Results
 `CVPaint` tracks a green object in real time blah blah background subtraction lighting conditions etc
-### Attribution
-Attribution to http://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/ for Open CV object tracking.
+## Attribution
+[Adrian Rosebrock](http://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/) for Open CV object tracking
+
+[Sid Garimella and Amy Phung](https://github.com/AmyPhung/InteractiveProgramming/blob/master/Hand_Detection/HandDetection.py) for hand tracking
