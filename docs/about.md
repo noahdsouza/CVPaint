@@ -9,16 +9,13 @@ The purpose of the final project is to be a culmination of our learning, and to 
 # Meet the Team
 
 ### Noah D'Souza
-<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200628.png" width="150" height="200" /> <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/noah.png" width="200" height="250" />
-
+<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/noah.png" width="175" height="225" /> <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200628.png" width="150" height="200" /> 
 Noah is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering.
 
 ### Chase Joyner
-<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200553.png" width="150" height="200" /> <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/chase2.png" width="200" height="250" />
-
+ <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/chase2.png" width="175" height="225" /> <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200553.png" width="150" height="200" />
 Chase is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering.
 
 ### Rachel Won
-<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200527.png" width="150" height="200" /> <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/rachel2.png" width="200" height="250" />
-
+<img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/rachel2.png" width="175" height="225" /> <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/20180430_200527.png" width="150" height="200" /> 
 Rachel is a first-year at the Olin College of Engineering, majoring in Mechanical Engineering.
