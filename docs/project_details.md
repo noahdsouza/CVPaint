@@ -5,5 +5,7 @@
 #### CVPaint uses computer vision to track an object to draw virtual pictures.
 
 ## Implementation Information
+A big part of the code is keeping track of the points the cursor has traversed over. We were worried that 
 
 ## Results
+`CVPaint` tracks a green object in real time blah blah background subtraction lighting conditions etc
