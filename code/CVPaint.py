@@ -144,18 +144,18 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
 
     # update the points queue
     if counter%2 == 0:
-        pts.insert(0,(center, linecolor))
+        pts.insert(0,(center, linecolor, counter))
 
     else:
         blanks.insert(0,(center, linecolor))
 
         if blanks[0][0] is not None:
-            if 0 < blanks[0][0][1] <= 45:
+            if 0 < blanks[0][0][1] <= 40:
                 linecolor = pickColor(blanks[0][0])
     # loop over the set of tracked points
 
     if pts[0][0] is not None:
-        if 0 < pts[0][0][1] <= 45:
+        if 0 < pts[0][0][1] <= 40:
             linecolor = pickColor(pts[0][0])
 
     for i in range(len(pts) - 1, 1, -1):
@@ -164,6 +164,8 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
         if len(pts) == 0:
             continue
         if pts[i - 1][0] is None or pts[i][0] is None:
+            continue
+        if pts[i - 1][2] != pts[i][2]:
             continue
         # otherwise, compute the thickness of the line and
         # draw the connecting lines
