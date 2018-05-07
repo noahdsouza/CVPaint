@@ -1,8 +1,4 @@
-# import the necessary packages
-# cv2.rectangle(frame, (0,0), (100,100), (255,255,255), -1)
-from collections import deque
 import numpy as np
-import argparse
 import imutils
 import cv2
 from PIL import Image
@@ -77,8 +73,6 @@ def paint(greenLower, greenUpper, pts, camera):
         hsv = cv2.cvtColor(blur,cv2.COLOR_BGR2HSV)
         #Create a binary image with where white will be skin colors and rest is black
         mask2 = cv2.inRange(hsv,np.array([2,50,50]),np.array([15,255,255])) #for skin colors
-        #tolerance = 30
-        #mask2 = cv2.inRange(hsv,np.array([60-tolerance,50,50]),np.array([60+tolerance,255,255]))#for green objects
         #Kernel matrices for morphological transformation
         kernel_square = np.ones((11,11),np.uint8)
         kernel_ellipse= cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5))
@@ -129,7 +123,6 @@ def paint(greenLower, greenUpper, pts, camera):
         center = centerMass
 
         # update the points queue
-        #pts.appendleft(center)
         pts.insert(0,(center, linecolor, thiccness))
         # loop over the set of tracked points
         cv2.rectangle(frame, (0,0), (600,450), (255,255,255), -1)
@@ -189,18 +182,3 @@ home_screen()
 lower, upper, pts, camera = boundaries_and_initialize()
 paint(lower, upper, pts, camera)
 save_file(camera)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# oh shiiii waddup
