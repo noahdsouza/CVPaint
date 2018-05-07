@@ -19,6 +19,6 @@ Then we realized that actually mapping movements was far out of the scope of our
 
 
 The code works like so:
-Opening the Kinects camera and utilizes it main and infrared camera. The camera can be used for OpenCV to collect the data using the depth image.
+Opening the Kinects camera and utilizes its main and infrared camera. The camera can be used for OpenCV to collect the data using the depth image.
 
-However, we eventually realized that in fact, concepts/parts of `CVPuppets` could be salvaged. With more time, we would have liked to fully integrate the Kinect motion tracking into our `CVPaint` code so the user could use their fingers to control the paint cursor and used the depth map to manipulate the thickness of the lines being drawn.
+However, after pivoting, we eventually realized that in fact, concepts/parts of `CVPuppets` could be salvaged. With more time, we would have liked to fully integrate the Kinect motion tracking into our `CVPaint` code so the user could use their fingers to control the paint cursor and used the depth map to manipulate the thickness of the lines being drawn.

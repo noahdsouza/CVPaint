@@ -5,15 +5,14 @@ AUTHORS: Rachel Won, Noah D'Souza, Chase Joyner
 import numpy as np
 import imutils
 import cv2
-from PIL import Image
 import pygame, sys
 from pygame.locals import *
 
 def home_screen(screen):
-"""
-instantiates the home screen in pygame before loading the CV2 window
-the home screen contains the logo, instructions, and a start button
-"""
+    """
+    instantiates the home screen in pygame before loading the CV2 window
+    the home screen contains the logo, instructions, and a start button
+    """
     start = pygame.image.load('start.png')
     font = pygame.font.Font(None, 32)
     logo = pygame.image.load("CVPAINTLOGO.png")
