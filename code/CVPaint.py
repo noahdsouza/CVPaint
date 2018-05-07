@@ -145,6 +145,7 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
     # update the points queue
     if counter%2 == 0:
         pts.insert(0,(center, linecolor))
+
     else:
         blanks.insert(0,(center, linecolor))
 
@@ -157,9 +158,11 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
         if 0 < pts[0][0][1] <= 45:
             linecolor = pickColor(pts[0][0])
 
-    for i in range(len(pts), 1, -1):
+    for i in range(len(pts) - 1, 1, -1):
         # if either of the tracked points are None, ignore
         # them
+        if len(pts) == 0:
+            continue
         if pts[i - 1][0] is None or pts[i][0] is None:
             continue
         # otherwise, compute the thickness of the line and
