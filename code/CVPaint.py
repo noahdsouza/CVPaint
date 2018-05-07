@@ -36,52 +36,57 @@ def boundaries_and_initialize():
     # list of tracked points
     greenLower = (29, 86, 6)
     greenUpper = (64, 255, 255)
-    pts = []
+    pts = [((200,300),(255,255,255), 0)]
     blanks = []
     linecolor = (0,0,0)
-    counter = 0
-    return greenLower, greenUpper, pts, linecolor, counter, blanks
+    counter = 1
+    radius = 11
+    return greenLower, greenUpper, pts, linecolor, counter, blanks, radius
 
 def pickColor(point):
     x = point[0]
     y = point[1]
     depth = 40
-    if 0 < x <= 75 and 0 < y <= depth:
+    if 0 < x <= 72 and 0 < y <= depth:
         #eraser
         return (255, 255, 255)
-    if 75 < x <= 150 and 0 < y <= depth:
+    if 72 < x <= 138 and 0 < y <= depth:
         #black
         return (0,0,0)
-    if 150 < x <= 225 and 0 < y <= depth:
+    if 138 < x <= 204 and 0 < y <= depth:
+        #brown
+        return (122,78,32)
+    if 204 < x <= 270 and 0 < y <= depth:
         #purple
         return (242,0,255)
-    if 150 < x <= 300 and 0 < y <= depth:
+    if 270 < x <= 336 and 0 < y <= depth:
         #blue
         return (0,0,255)
-    if 300 < x <= 375 and 0 < y <= depth:
+    if 336 < x <= 402 and 0 < y <= depth:
         #green
         return (63,255,0)
-    if 375 < x <= 450 and 0 < y <= depth:
+    if 402 < x <= 468 and 0 < y <= depth:
         #yellow
         return (255,250,0)
-    if 450 < x <= 525 and 0 < y <= depth:
+    if 468 < x <= 534 and 0 < y <= depth:
         #orange
         return (255,174,0)
-    if 525 < x <= 600 and 0 < y <= depth:
+    if 534 < x <= 600 and 0 < y <= depth:
         #red
         return (255,0,0)
 
 def draw_color_bar(frame):
     # initialize the colorbar (in RGB)
     depth = 35
-    cv2.rectangle(frame, (0,0), (75,depth - 1), (0,0,0), 2)           # white/eraser
-    cv2.rectangle(frame, (75,0), (150,depth), (0,0,0), -1)        # black
-    cv2.rectangle(frame, (150,0), (225,depth), (242,0,255), -1)   # violet/purple
-    cv2.rectangle(frame, (225,0), (300,depth), (0,0,255), -1)     # blue
-    cv2.rectangle(frame, (300,0), (375,depth), (63,255,0), -1)    # green
-    cv2.rectangle(frame, (375,0), (450,depth), (255,250,0), -1)   # yellow
-    cv2.rectangle(frame, (450,0), (525,depth), (255,174,0), -1)   # orange
-    cv2.rectangle(frame, (525,0), (600,depth), (255,0,0), -1)     # red
+    cv2.rectangle(frame, (0,0), (72,depth - 1), (0,0,0), 2)           # white/eraser
+    cv2.rectangle(frame, (72,0), (138,depth), (0,0,0), -1)        # black
+    cv2.rectangle(frame, (138,0), (204,depth), (122,78,32), -1)     #brown
+    cv2.rectangle(frame, (204,0), (270,depth), (242,0,255), -1)   # violet/purple
+    cv2.rectangle(frame, (270,0), (336,depth), (0,0,255), -1)     # blue
+    cv2.rectangle(frame, (336,0), (402,depth), (63,255,0), -1)    # green
+    cv2.rectangle(frame, (402,0), (468,depth), (255,250,0), -1)   # yellow
+    cv2.rectangle(frame, (468,0), (534,depth), (255,174,0), -1)   # orange
+    cv2.rectangle(frame, (534,0), (600,depth), (255,0,0), -1)     # red
 
 def save_file(camera, frame):
     #user can input the name of the file when saving
@@ -110,7 +115,7 @@ def save_file(camera, frame):
         camera.release()
         cv2.destroyAllWindows()
 
-def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks):
+def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks, radius):
     grabbed, frame = camera.read()
     frame1 = imutils.resize(frame, width=600)
 
@@ -134,28 +139,22 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
         ((x, y), radius) = cv2.minEnclosingCircle(c)
         M = cv2.moments(c)
         center = ((int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"])))
-
         # only proceed if the radius meets a minimum size
-        if radius > 10:
-            # draw the circle and centroid on the frame,
-            # then update the list of tracked points
-            #cv2.circle(frame1, (int(x), int(y)), int(radius), linecolor, 2)
-            cv2.circle(frame1, center, 5, linecolor, -1)
 
     # update the points queue
     if counter%2 == 0:
-        pts.insert(0,(center, linecolor))
+        pts.insert(0,(center, linecolor, counter))
 
     else:
         blanks.insert(0,(center, linecolor))
 
         if blanks[0][0] is not None:
-            if 0 < blanks[0][0][1] <= 45:
+            if 0 < blanks[0][0][1] <= 40:
                 linecolor = pickColor(blanks[0][0])
     # loop over the set of tracked points
 
     if pts[0][0] is not None:
-        if 0 < pts[0][0][1] <= 45:
+        if 0 < pts[0][0][1] <= 40:
             linecolor = pickColor(pts[0][0])
 
     for i in range(len(pts) - 1, 1, -1):
@@ -165,10 +164,21 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
             continue
         if pts[i - 1][0] is None or pts[i][0] is None:
             continue
+        if pts[i - 1][2] != pts[i][2]:
+            continue
         # otherwise, compute the thickness of the line and
         # draw the connecting lines
         #thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
         cv2.line(frame1, pts[i][0], pts[i - 1][0], pts[i - 1][1], 3)
+
+    if radius > 10:
+        # draw the circle and centroid on the frame,
+        # then update the list of tracked points
+        #cv2.circle(frame1, (int(x), int(y)), int(radius), linecolor, 2)
+        if linecolor == (255,255,255):
+            cv2.circle(frame1, center, 5, (0,0,0), 3)
+        else:
+            cv2.circle(frame1, center, 5, linecolor, -1)
 
     draw_color_bar(frame1)
 
@@ -181,10 +191,10 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
         if event.type == KEYDOWN:
             if event.key == K_q:
                 save_file(camera, frame1)
-                return False, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
+                return False, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks, radius
             if event.key == K_SPACE:
                 counter += 1
-    return True, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
+    return True, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks, radius
 
 if __name__ == '__main__':
 
@@ -195,10 +205,10 @@ if __name__ == '__main__':
             pygame.display.set_caption("CVPaint")
             screen = pygame.display.set_mode([600,450])
             flag = home_screen(screen)
-            greenLower, greenUpper, pts, linecolor, counter, blanks = boundaries_and_initialize()
+            greenLower, greenUpper, pts, linecolor, counter, blanks, radius = boundaries_and_initialize()
 
             while flag:
-                flag, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks = draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks)
+                flag, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks, radius = draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks, radius)
         except KeyboardInterrupt:
             pygame.quit()
             cv2.destroyAllWindows()
