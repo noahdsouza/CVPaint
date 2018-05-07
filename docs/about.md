@@ -8,17 +8,17 @@ The purpose of the final project is to be a culmination of our learning, and to 
 
 # Meet the Team
 
-### [Noah](https://github.com/noahdsouza) D'Souza
+### Noah D'Souza
 <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/noah.png" width="175" height="225" /> 
 
-Noah is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering.
+[Noah](https://github.com/noahdsouza) is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering.
 
-### [Chase](https://github.com/ChaseJoy) Joyner
+### Chase Joyner
  <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/chase2.png" width="175" height="225" /> 
  
-Chase is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering.
+[Chase](https://github.com/ChaseJoy) is a first-year at the Olin College of Engineering, majoring in Electrical and Computer Engineering.
 
-### [Rachel](https://github.com/rwon869) Won
+### Rachel Won
 <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/rachel2.png" width="175" height="225" /> 
 
-Rachel is a first-year at the Olin College of Engineering, majoring in Mechanical Engineering.
+[Rachel](https://github.com/rwon869) is a first-year at the Olin College of Engineering, majoring in Mechanical Engineering.
