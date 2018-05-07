@@ -37,9 +37,10 @@ def boundaries_and_initialize():
     greenLower = (29, 86, 6)
     greenUpper = (64, 255, 255)
     pts = []
+    blanks = []
     linecolor = (0,0,0)
     counter = 0
-    return greenLower, greenUpper, pts, linecolor, counter
+    return greenLower, greenUpper, pts, linecolor, counter, blanks
 
 def pickColor(point):
     x = point[0]
@@ -104,11 +105,12 @@ def save_file(camera, frame):
         pygame.quit()
     # cleanup the camera and close any open windows
     else:
+        print("Thank you for trying CVPaint!")
         pygame.quit()
         camera.release()
         cv2.destroyAllWindows()
 
-def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen):
+def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks):
     grabbed, frame = camera.read()
     frame1 = imutils.resize(frame, width=600)
 
@@ -143,14 +145,19 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen):
     # update the points queue
     if counter%2 == 0:
         pts.insert(0,(center, linecolor))
+    else:
+        blanks.insert(0,(center, linecolor))
+
+        if blanks[0][0] is not None:
+            if 0 < blanks[0][0][1] <= 45:
+                linecolor = pickColor(blanks[0][0])
     # loop over the set of tracked points
 
     if pts[0][0] is not None:
         if 0 < pts[0][0][1] <= 45:
             linecolor = pickColor(pts[0][0])
 
-
-    for i in range(1, len(pts)):
+    for i in range(len(pts), 1, -1):
         # if either of the tracked points are None, ignore
         # them
         if pts[i - 1][0] is None or pts[i][0] is None:
@@ -158,7 +165,7 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen):
         # otherwise, compute the thickness of the line and
         # draw the connecting lines
         #thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
-        cv2.line(frame1, pts[i - 1][0], pts[i][0], pts[i][1], 3)
+        cv2.line(frame1, pts[i][0], pts[i - 1][0], pts[i - 1][1], 3)
 
     draw_color_bar(frame1)
 
@@ -171,10 +178,10 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen):
         if event.type == KEYDOWN:
             if event.key == K_q:
                 save_file(camera, frame1)
-                return False, greenLower, greenUpper, pts, linecolor, counter, camera, screen
+                return False, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
             if event.key == K_SPACE:
                 counter += 1
-    return True, greenLower, greenUpper, pts, linecolor, counter, camera, screen
+    return True, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
 
 if __name__ == '__main__':
 
@@ -185,10 +192,10 @@ if __name__ == '__main__':
             pygame.display.set_caption("CVPaint")
             screen = pygame.display.set_mode([600,450])
             flag = home_screen(screen)
-            greenLower, greenUpper, pts, linecolor, counter = boundaries_and_initialize()
+            greenLower, greenUpper, pts, linecolor, counter, blanks = boundaries_and_initialize()
 
             while flag:
-                flag, greenLower, greenUpper, pts, linecolor, counter, camera, screen = draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen)
+                flag, greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks = draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks)
         except KeyboardInterrupt:
             pygame.quit()
             cv2.destroyAllWindows()
