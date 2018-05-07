@@ -14,11 +14,18 @@ Let's talk some more about `CVPuppets`.
     * RANSAC is an algorithm which randomly chooses two points in a data set (in this case, our point cloud), draws a straight line connecting the points, and determines how many other points lie within a defined distance away, called inliers. It runs for n number of iterations, and returns a line of best fit by maximizing the number of inliers. We attempted to use RANSAC for skeleton tracking. 
     * The pinhole camera model was a way to map the depth information from the Kinect to our screen, using similar triangles. 
 
-Then we realized that actually mapping movements was far out of the scope of our project, making us decide to do an ankle-breaking pivot to `CVPaint`
+The code works like so:
+Opening the Kinects camera and utilizes its main and infrared camera. The camera can be used for OpenCV to collect the data using the depth image.
 ![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Beforepivot.gif)
 
 
-The code works like so:
-Opening the Kinects camera and utilizes its main and infrared camera. The camera can be used for OpenCV to collect the data using the depth image.
+Then we realized that actually mapping movements was far out of the scope of our project, making us decide to do an ankle-breaking pivot to `CVPaint`
 
-However, after pivoting, we eventually realized that in fact, concepts/parts of `CVPuppets` could be salvaged. With more time, we would have liked to fully integrate the Kinect motion tracking into our `CVPaint` code so the user could use their fingers to control the paint cursor and used the depth map to manipulate the thickness of the lines being drawn.
+However, after pivoting, we eventually realized that in fact, concepts/parts of `CVPuppets` could be salvaged. We attempted to implement hand tracking through openCV in our file `hand_tracking.py` to control the cursor. We were able subtract the background to detect the center of a hand and use that as our "mouse" to draw. We were also able to create an algorithm that calculates the thickness of the line being drawn depending on how far or close the hand was to the camera. 
+
+[insert gif here of hand tracker working]
+
+However, we didn't have enough time to seamlessly integrate this into our `CVPaint.py` code (which currently uses a green object as a cursor) without the tracking acting very finnicky, so we decided to leave the two files separate. 
+
+With more time, we would have liked to use the Kinect motion tracking (for hopefully more accurate results) into our `CVPaint` code so the user could use their fingers to control the paint cursor and used the depth map to manipulate the thickness of the lines being drawn.
+
