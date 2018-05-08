@@ -3,7 +3,7 @@
 #### *Software Design 2018 Final Project*
 
 ## Description
-Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive computer vision program where you can draw a picture using your hand as a cursor. The program has the capabilities of changing the color of your cursor and have and eraser to delete and misguided/unintended strokes. You will have the function to save your creation afterwards!
+Inspired by the infamous Microsoft Paint, we wanted to create a fun interactive computer vision program where you can draw a picture using your hand as a cursor. The program has the capabilities of changing the color of your cursor and have and eraser to delete and misguided/unintended strokes. You will have the function to save your creation afterwards! For more information, please visit our [_Website_](https://noahdsouza.github.io/CVPaint/index), watch our [_Video_](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/Final%20Deliverables/DemoVideo.gif), or read our [_Poster_](https://github.com/noahdsouza/CVPaint/blob/master/Final%20Deliverables/Softdesposter.pdf)
 
 ### Getting Started
 CVPaint was designed on Ubuntu, so we strongly recommend you use Ubuntu to run it.
@@ -32,11 +32,6 @@ $ cd CVPaint/code/
 $ python3 CVPaint.py
 ```
 note: `CVPaint` is only compatible with python3
-
-### For more information, please visit:
-[_Website:_](https://noahdsouza.github.io/CVPaint/index)
-[_Video:_](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/Final%20Deliverables/DemoVideo.gif)
-[_Poster:_](https://github.com/noahdsouza/CVPaint/blob/master/Final%20Deliverables/Softdesposter.pdf)
 
 ### Authors
 [Rachel Won](https://github.com/rwon869), [Noah D'Souza](https://github.com/noahdsouza), and [Chase Joyner](https://github.com/ChaseJoy)
