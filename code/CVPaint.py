@@ -212,10 +212,10 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
 if __name__ == '__main__':
 
     def main_loop():
-    """
-    Release the Kraken.
-    Jk, this just runs the main body of the code
-    """
+    # """
+    # Release the Kraken.
+    # Jk, this just runs the main body of the code
+    # """
         try:
             camera = cv2.VideoCapture(0)
             pygame.init()

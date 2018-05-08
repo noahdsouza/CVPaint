@@ -125,7 +125,7 @@ def paint(greenLower, greenUpper, pts, camera):
         # update the points queue
         pts.insert(0,(center, linecolor, thiccness))
         # loop over the set of tracked points
-        cv2.rectangle(frame, (0,0), (600,450), (255,255,255), -1)
+        # cv2.rectangle(frame, (0,0), (600,450), (255,255,255), -1)
 
         # initialize the colorbar (REMEMBER BGR NOT RGB)
         cv2.rectangle(frame, (0,0), (75,49), (0,0,0), 2)           # white/eraser
