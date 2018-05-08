@@ -32,4 +32,7 @@ And then run `python CVPaint.py` after changing into the `code` directory.
 This repo is free to use. Go nuts. Edits are welcome if they improve the program.
 
 ### Final Deliverable Links:
+_Video:_
 https://raw.githubusercontent.com/noahdsouza/CVPaint/master/Final%20Deliverables/DemoVideo.gif
+
+_Poster:_
