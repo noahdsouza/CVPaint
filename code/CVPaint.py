@@ -21,18 +21,18 @@ def home_screen(screen):
     running = True
     while running:
         for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN: #exit home screen if user clicks start button
+            if event.type == pygame.MOUSEBUTTONDOWN:  # exit home screen if user clicks start button
                 if pygame.mouse.get_pos() >= (225, 350):
                     if pygame.mouse.get_pos() <= (350,400):
                             running = False
                             return True
-            if event.type == KEYDOWN: #can quit from the home screen with q
+            if event.type == KEYDOWN:  # can quit from the home screen with q
                 if event.key == K_q:
                     pygame.quit()
                     cv2.destroyAllWindows()
                     return False
         screen.fill(pygame.Color(255, 255, 255))
-        screen.blit(logo, (190,50)) #draw images/buttons on home screen
+        screen.blit(logo, (190,50))  # draw images/buttons on home screen
         screen.blit(start, (225,350))
         screen.blit(instructions, (175, 275))
         pygame.display.update()
@@ -41,7 +41,7 @@ def boundaries_and_initialize():
     """
     initializes all the constants needed for the drawing function and returns them
     """
-    greenLower = (29, 86, 6)   # define the lower and upper boundaries of the "green"
+    greenLower = (29, 86, 6)  # define the lower and upper boundaries of the "green"
     greenUpper = (64, 255, 255)
     pts = [((200,300),(255,255,255), 0)]
     blanks = []
@@ -58,23 +58,23 @@ def pickColor(point):
     y = point[1]
     depth = 40
     if 0 < x <= 72 and 0 < y <= depth:
-        return (255, 255, 255) #eraser
+        return (255, 255, 255)  # eraser
     if 72 < x <= 138 and 0 < y <= depth:
-        return (0,0,0) #black
+        return (0,0,0)  # black
     if 138 < x <= 204 and 0 < y <= depth:
-        return (122,78,32) #brown
+        return (122,78,32)  # brown
     if 204 < x <= 270 and 0 < y <= depth:
-        return (242,0,255) #purple
+        return (242,0,255)  # purple
     if 270 < x <= 336 and 0 < y <= depth:
-        return (0,0,255) #blue
+        return (0,0,255)  # blue
     if 336 < x <= 402 and 0 < y <= depth:
-        return (63,255,0) #green
+        return (63,255,0)  # green
     if 402 < x <= 468 and 0 < y <= depth:
-        return (255,250,0) #yellow
+        return (255,250,0)  # yellow
     if 468 < x <= 534 and 0 < y <= depth:
-        return (255,174,0) #orange
+        return (255,174,0)  # orange
     if 534 < x <= 600 and 0 < y <= depth:
-        return (255,0,0) #red
+        return (255,0,0)  # red
 
 def draw_color_bar(frame):
     """
@@ -99,24 +99,24 @@ def save_file(camera, frame):
     user can name the png file
     """
     save = input("Would you like to save your drawing? Enter yes or no ")
-    if save == "yes" or save == "y" or save == "ye" or save == "yes ": #accounting for typos
+    if save == "yes" or save == "y" or save == "ye" or save == "yes ":  # accounting for typos
         name = input("What would you like to name your masterpiece? ")
         filename = 'images/' + name + '.png'
-        cv2.imwrite(filename, cv2.flip(frame,1)) #saves the image as the last frame
+        cv2.imwrite(filename, cv2.flip(frame,1))  # saves the image as the last frame
         camera.release()
         pygame.quit()
 
-        #reopen saved picture to display for user
+        # reopen saved picture to display for user
         img = cv2.imread(filename, 1)
         b,g,r = cv2.split(img)  # get b,g,r
-        rgb_img = cv2.merge([r,g,b]) #convert from bgr colorspace to rgb
-        crop_img = rgb_img[36:450, 0:600] #crop out the colorbar
+        rgb_img = cv2.merge([r,g,b])  # convert from bgr colorspace to rgb
+        crop_img = rgb_img[36:450, 0:600]  # crop out the colorbar
         cv2.imshow(filename, crop_img)
         cv2.imwrite(filename, crop_img)
         cv2.waitKey(10000)
         cv2.destroyAllWindows()
         camera.release()
-        pygame.quit() # cleanup the camera and close any open windows
+        pygame.quit()  # cleanup the camera and close any open windows
     else:
         print("Thank you for trying CVPaint!")
         pygame.quit()
@@ -131,7 +131,7 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
     grabbed, frame = camera.read()
     frame1 = imutils.resize(frame, width=600)
 
-    #find the green object and create a mask over it
+    # find the green object and create a mask over it
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, greenLower, greenUpper)
     mask = cv2.erode(mask, None, iterations=2)
@@ -154,20 +154,20 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
         M = cv2.moments(c)
         center = ((int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"])))
 
-    #check whether the user is in "drawing" mode or not
+    # check whether the user is in "drawing" mode or not
     if counter%2 == 0:
         pts.insert(0,(center, linecolor, counter))
 
     else:
         blanks.insert(0,(center, linecolor))
 
-        #if user is not in drawing mode, still track the cursor
-        #and change the color if hovering over the color bar
+        # if user is not in drawing mode, still track the cursor
+        # and change the color if hovering over the color bar
         if blanks[0][0] is not None:
             if 0 < blanks[0][0][1] <= 40:
                 linecolor = pickColor(blanks[0][0])
 
-    #change color
+    # change color
     if pts[0][0] is not None:
         if 0 < pts[0][0][1] <= 40:
             linecolor = pickColor(pts[0][0])
@@ -182,11 +182,11 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
         # the first point after re-entering "drawing mode"
         if pts[i - 1][2] != pts[i][2]:
             continue
-        #draw connecting lines
+        # draw lines connecting the points
         cv2.line(frame1, pts[i][0], pts[i - 1][0], pts[i - 1][1], 3)
 
     if radius > 10:
-        #if cursor is white, put a black frame around it
+        # if cursor is white, put a black frame around it
         if linecolor == (255,255,255):
             cv2.circle(frame1, center, 5, (0,0,0), 3)
         else:
@@ -199,7 +199,7 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
     screen.blit(frame, (0,0))
     pygame.display.update()
 
-    #press q to exit
+    # press q to exit
     for event in pygame.event.get():
         if event.type == KEYDOWN:
             if event.key == K_q:
@@ -212,6 +212,10 @@ def draw(greenLower, greenUpper, pts, linecolor, counter, camera, screen, blanks
 if __name__ == '__main__':
 
     def main_loop():
+    """
+    Release the Kraken.
+    Jk, this just runs the main body of the code
+    """
         try:
             camera = cv2.VideoCapture(0)
             pygame.init()
