@@ -10,11 +10,13 @@
 * Uncover your webcam if you put something over it...We know Zuck is watching but `CVPaint` needs image input!
 
 # Prerequisites
-You will need several packages in order to run `CVPaint` (if you don't already have them):
-* OpenCV
-  * `$ pip install opencv-python`
-* iMutils
-  * `$ pip install imutils`
+You will need several packages in order to run CVPaint (if you don’t already have them) by running the following commands in your terminal:
+ ```
+$ sudo apt-get install python-opencv
+$ pip install imutils
+$ pip install numpy
+$ pip install pygame
+```
 
 # Getting the Code
 Now that you have the required dependencies, you can go ahead a grab the code from our GitHub by running
@@ -27,7 +29,7 @@ You should now have a local repository named `CVPaint`.
 `CVPaint` has several files and functions, but to run the main one, follow these steps!
 1. Open a terminal
 1. Enter the `CVPaint` code directory by entering `cd CVPaint/code/` into the command line
-1. Run `CVPaint` by entering `python CVPaint.py` into the command line
+1. Run `CVPaint` by entering `python3 CVPaint.py` into the command line
 1. Go absolutely nuts with our project!
   1. To pause the paintbrush, hit the space bar
-  1. To quit and save your art into the `images` subfolder
+  1. To quit and save your art into the `images` subfolder, press q and then follow the instructions in the terminal
