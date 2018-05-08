@@ -8,6 +8,8 @@ The purpose of the final project is to be a culmination of our learning, and to 
 
 # Meet the Team
 
+_all portraits done with CVPaint_
+
 ### Noah D'Souza
 <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/noah.png" width="175" height="225" /> 
 
@@ -22,3 +24,4 @@ The purpose of the final project is to be a culmination of our learning, and to 
 <img src="https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/Profiles/rachel2.png" width="175" height="225" /> 
 
 [Rachel](https://github.com/rwon869) is a first-year at the Olin College of Engineering, majoring in Mechanical Engineering.
+
