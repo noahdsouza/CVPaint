@@ -31,7 +31,7 @@ then use these commands to run the code
 $ cd CVPaint/code/
 $ python3 CVPaint.py
 ```
-note: t`CVPaint` is only compatible with python3
+note: `CVPaint` is only compatible with python3
 
 ### For more information, please visit:
 _Website:_
@@ -44,9 +44,7 @@ _Poster:_
 https://github.com/noahdsouza/CVPaint/blob/master/Final%20Deliverables/Softdesposter.pdf
 
 ### Authors
-[Rachel Won](https://github.com/rwon869)
-[Noah D'Souza](https://github.com/noahdsouza)
-[Chase Joyner](https://github.com/ChaseJoy)
+[Rachel Won](https://github.com/rwon869), [Noah D'Souza](https://github.com/noahdsouza), and [Chase Joyner](https://github.com/ChaseJoy)
 
 ### License
 This repo is free to use. Go nuts. Edits are welcome if they improve the program.
