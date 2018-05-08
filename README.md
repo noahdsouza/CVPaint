@@ -1,7 +1,5 @@
 # CVPaint
 
-## Noah D'Souza, Chase Joyner, & Rachel Won
-
 #### *Software Design 2018 Final Project*
 
 ## Description
@@ -15,23 +13,27 @@ Make sure the computer you are using has a webcam - we used the built-in webcams
 Uncover your webcam if you put something over it…We know Zuck is watching but CVPaint needs image input!
 
 ### Dependencies
-You will need several packages in order to run CVPaint (if you don’t already have them):
-* OpenCV
-  * `$ pip install opencv-python`
-* iMutils
-  * `$ pip install imutils`
+You will need several packages in order to run CVPaint (if you don’t already have them) by running the following commands in your terminal:
+ ```
+$ sudo apt-get install python-opencv
+$ pip install imutils
+$ pip install numpy
+$ pip install pygame
+```
 
 ### Usage
 Grab the code from our GitHub by running
 ```
 $ git clone https://github.com/noahdsouza/CVPaint.git
 ```
-And then run `python CVPaint.py` after changing into the `code` directory.
+then use these commands to run the code
+```
+$ cd CVPaint/code/
+$ python3 CVPaint.py
+```
+note: t`CVPaint` is only compatible with python3
 
-### License
-This repo is free to use. Go nuts. Edits are welcome if they improve the program.
-
-### Final Deliverable Links:
+### For more information, please visit:
 _Website:_
 https://noahdsouza.github.io/CVPaint/index
 
@@ -40,3 +42,16 @@ https://raw.githubusercontent.com/noahdsouza/CVPaint/master/Final%20Deliverables
 
 _Poster:_
 https://github.com/noahdsouza/CVPaint/blob/master/Final%20Deliverables/Softdesposter.pdf
+
+### Authors
+[Rachel Won](https://github.com/rwon869)
+[Noah D'Souza](https://github.com/noahdsouza)
+[Chase Joyner](https://github.com/ChaseJoy)
+
+### License
+This repo is free to use. Go nuts. Edits are welcome if they improve the program.
+
+### Attribution
+[Adrian Rosebrock](http://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/) for Open CV object tracking
+
+[Sid Garimella and Amy Phung](https://github.com/AmyPhung/InteractiveProgramming/blob/master/Hand_Detection/HandDetection.py) for hand tracking
