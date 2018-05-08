@@ -26,7 +26,7 @@ Grab the code from our GitHub by running
 ```
 $ git clone https://github.com/noahdsouza/CVPaint.git
 ```
-And then run `color_tracker.py`
+And then run `python CVPaint.py` after changing into the code directory.
 
 ### License
 This repo is free to use. Go nuts. Edits are welcome if they improve the program.
