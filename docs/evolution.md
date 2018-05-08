@@ -25,9 +25,8 @@ Then we realized that actually mapping movements was far out of the scope of our
 
 However, after pivoting, we eventually realized that in fact, concepts/parts of `CVPuppets` could be salvaged. We attempted to implement hand tracking through openCV in our file `hand_tracking.py` to control the cursor. We were able subtract the background to detect the center of a hand and use that as our "mouse" to draw. We were also able to create an algorithm that calculates the thickness of the line being drawn depending on how far or close the hand was to the camera. 
 
-[insert gif here of hand tracker working]
+![](https://raw.githubusercontent.com/noahdsouza/CVPaint/master/docs/images/HANDTRONK.gif)
 
 However, we didn't have enough time to seamlessly integrate this into our `CVPaint.py` code (which currently uses a green object as a cursor) without the tracking acting very finnicky, so we decided to leave the two files separate. 
 
 With more time, we would have liked to use the Kinect motion tracking (for hopefully more accurate results) into our `CVPaint` code so the user could use their fingers to control the paint cursor and used the depth map to manipulate the thickness of the lines being drawn.
-
